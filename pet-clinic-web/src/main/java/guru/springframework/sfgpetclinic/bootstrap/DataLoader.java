@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -39,14 +41,34 @@ public class DataLoader implements CommandLineRunner {
     System.out.println("Loaded Pets");
 
     Owner owner1 = new Owner();
-    owner1.setFirstName("Michael");
-    owner1.setLastName("Watson");
+    owner1.setFirstName("Shubham");
+    owner1.setLastName("Jaiswal");
+    owner1.setAddress("Uttar Pradesh");
+    owner1.setCity("Varanasi");
+    owner1.setTelephone("9984567696");
+
+    Pet shubhamPet = new Pet();
+    shubhamPet.setPetType(savedDogPetType);
+    shubhamPet.setOwner(owner1);
+    shubhamPet.setBirthDate(LocalDate.now());
+    shubhamPet.setName("Rocky");
+    owner1.getPets().add(shubhamPet);
 
     ownerService.save(owner1);
 
     Owner owner2 = new Owner();
-    owner2.setFirstName("Fionna");
-    owner2.setLastName("Glen");
+    owner2.setFirstName("Nitika");
+    owner2.setLastName("Bharti");
+    owner2.setAddress("Bihar");
+    owner2.setCity("Patna");
+    owner2.setTelephone("2983749239");
+
+    Pet nitikaPet = new Pet();
+    nitikaPet.setPetType(savedCatPetType);
+    nitikaPet.setOwner(owner2);
+    nitikaPet.setBirthDate(LocalDate.now());
+    nitikaPet.setName("Catty");
+    owner2.getPets().add(nitikaPet);
 
     ownerService.save(owner2);
     System.out.println("Loaded Owners.....");
