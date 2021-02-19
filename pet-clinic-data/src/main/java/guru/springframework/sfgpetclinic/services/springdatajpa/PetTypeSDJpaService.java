@@ -3,7 +3,6 @@ package guru.springframework.sfgpetclinic.services.springdatajpa;
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -38,11 +37,10 @@ public class PetTypeSDJpaService implements PetTypeService {
   @Override
   public void delete(PetType object) {
     petTypeRepository.delete(object);
-
   }
 
   @Override
   public void deleteById(Long aLong) {
-petTypeRepository.deleteById(aLong);
+    petTypeRepository.deleteById(aLong);
   }
 }
