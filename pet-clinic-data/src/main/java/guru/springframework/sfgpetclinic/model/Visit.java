@@ -6,23 +6,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "visits")
+@Table (name = "visits")
 public class Visit extends BaseEntity {
 
-  @Column(name = "date")
+  @Column (name = "date")
   private LocalDate date;
 
-  @Column(name = "description")
+  @Column (name = "description")
   private String description;
 
   @ManyToOne
-  @JoinColumn(name = "pet_id")
+  @JoinColumn (name = "pet_id")
   private Pet pet;
-
 }
